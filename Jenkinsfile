@@ -8,7 +8,7 @@ pipeline{
     CONFIGSERVER_URI = "http://configsvr:8888"
     EUREKASERVER_PORT = "8761"
     EUREKASERVER_URI = "http://eurekasvr:8761"
-    PROFILE += "dev"
+    PROFILE = "dev"
     CONFIGSERVER_PORT = "8888"
     CONFIGSERVER_PASSWORD = credentials('salonapi-configserver-password')
     ENCRYPT_KEY = credentials('salonapi-encryption-key')
