@@ -48,22 +48,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
-      <plugin>
-        <groupId>io.openliberty.boost</groupId>
-        <artifactId>boost-maven-plugin</artifactId>
-        <version>0.1</version>
-        <configuration>
-          <repository>willwbowen/${project.artifactId}</repository>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>docker-build</goal>
-              <goal>docker-push</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 
