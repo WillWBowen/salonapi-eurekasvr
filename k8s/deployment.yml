@@ -21,7 +21,7 @@ spec:
           - name: CONFIGSERVER_PORT
             value: "8888"
           - name: CONFIGSERVER_URI
-            value: "http://localhost:8888"
+            value: "http://configserver:8888"
           - name: CONFIGSERVER_PASSWORD
             valueFrom:
               secretKeyRef:
@@ -35,6 +35,6 @@ spec:
           - name: EUREKASERVER_PORT
             value: "8761"
           - name: EUREKASERVER_URI
-            value: "http://localhost:8761"
+            value: "http://eurekaserver:8761"
           - name: PROFILE
-            value: "$PROFILE"
+            value: "dev"
