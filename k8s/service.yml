@@ -5,6 +5,7 @@ metadata:
   labels:
     app: eurekaserver
 spec:
+  type: NodePort
   ports:
   - port: 8761
     nodePort: 30003
