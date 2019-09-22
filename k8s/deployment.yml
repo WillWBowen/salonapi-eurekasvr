@@ -19,7 +19,7 @@ spec:
             - containerPort: 8761
           env:
           - name: CONFIGSERVER_PORT
-            value: 8888
+            value: "8888"
           - name: CONFIGSERVER_URI
             value: "http://localhost:8888"
           - name: CONFIGSERVER_PASSWORD
@@ -33,7 +33,7 @@ spec:
                 name: configserver
                 key: encrypt-key
           - name: EUREKASERVER_PORT
-            value: 8761
+            value: "8761"
           - name: EUREKASERVER_URI
             value: "http://localhost:8761"
           - name: PROFILE
