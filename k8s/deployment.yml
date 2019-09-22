@@ -20,8 +20,11 @@ spec:
           env:
           - name: CONFIGSERVER_PORT
             value: "8888"
-          - name: CONFIGSERVER_URI
-            value: "http://configserver:8888"
+          - name: CONFIGSERVER_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: configserver
+                key: hostname
           - name: CONFIGSERVER_PASSWORD
             valueFrom:
               secretKeyRef:
@@ -33,8 +36,9 @@ spec:
                 name: configserver
                 key: encrypt-key
           - name: EUREKASERVER_PORT
-            value: "8761"
-          - name: EUREKASERVER_URI
-            value: "http://eurekaserver:8761"
+            valueFrom:
+              configMapKeyRef:
+                name: eurekaserver
+                key: port
           - name: PROFILE
             value: "dev"
