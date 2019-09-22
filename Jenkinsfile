@@ -4,15 +4,6 @@ pipeline{
     maven 'Maven 3.6.2'
     jdk 'jdk8'
   }
-  environment {
-    CONFIGSERVER_URI = "http://configsvr:8888"
-    EUREKASERVER_PORT = "8761"
-    EUREKASERVER_URI = "http://eurekasvr:8761"
-    PROFILE = "dev"
-    CONFIGSERVER_PORT = "8888"
-    CONFIGSERVER_PASSWORD = credentials('salonapi-configserver-password')
-    ENCRYPT_KEY = credentials('salonapi-encryption-key')
-  }
   stages {
     stage('Initialize') {
       steps {
@@ -49,8 +40,8 @@ pipeline{
     stage('Deploy') {
       steps {
         sh """
-          envsubst < ./k8s/deployment.yml | kubectl apply -f -
-          envsubst < ./k8s/service.yml | kubectl apply -f -
+          kubectl apply -f ./k8s/deployment.yml
+          kubectl apply -f ./k8s/service.yml
         """
       }
     }
